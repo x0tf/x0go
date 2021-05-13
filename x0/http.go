@@ -11,10 +11,14 @@ const (
 	PublicStagingInstance = "https://api.s.x0.tf"
 
 	endpointInfo = "/v2/info"
+
+	endpointNamespaces               = "/v2/namespaces"
+	endpointPartNamespacesResetToken = "/reset_token"
 )
 
 type httpClient struct {
 	instance string
+	token    string
 	http     *fasthttp.Client
 }
 
@@ -34,6 +38,10 @@ func (client *httpClient) execute(method, endpoint string, payload interface{}) 
 			return nil, err
 		}
 		request.SetBody(payloadJson)
+	}
+
+	if client.token != "" {
+		request.Header.Set(fasthttp.HeaderAuthorization, "Bearer "+client.token)
 	}
 
 	if err := client.http.Do(request, response); err != nil {
