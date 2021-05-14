@@ -2,9 +2,10 @@ package schema
 
 // Namespace represents a namespace
 type Namespace struct {
-	ID     string `json:"id"`
-	Token  string `json:"token"`
-	Active bool   `json:"active"`
+	ID      string `json:"id"`
+	Token   string `json:"token"`
+	Active  bool   `json:"active"`
+	Created int64  `json:"created"`
 }
 
 // Namespaces represents a paginated namespace response

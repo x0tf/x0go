@@ -14,6 +14,10 @@ const (
 
 	endpointNamespaces               = "/v2/namespaces"
 	endpointPartNamespacesResetToken = "/reset_token"
+
+	endpointElements             = "/v2/elements"
+	endpointPartElementsPaste    = "/paste"
+	endpointPartElementsRedirect = "/redirect"
 )
 
 type httpClient struct {
