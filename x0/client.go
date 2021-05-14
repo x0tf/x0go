@@ -6,6 +6,8 @@ import "github.com/valyala/fasthttp"
 type Client struct {
 	Instance   *InstanceClient
 	Namespaces *NamespacesClient
+	Elements   *ElementsClient
+	Invites    *InvitesClient
 }
 
 // NewClient creates a new x0 API client
@@ -26,5 +28,7 @@ func NewClientWithToken(instance, token string) *Client {
 	return &Client{
 		Instance:   &InstanceClient{http: http},
 		Namespaces: &NamespacesClient{http: http},
+		Elements:   &ElementsClient{http: http},
+		Invites:    &InvitesClient{http: http},
 	}
 }

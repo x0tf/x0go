@@ -18,6 +18,8 @@ const (
 	endpointElements             = "/v2/elements"
 	endpointPartElementsPaste    = "/paste"
 	endpointPartElementsRedirect = "/redirect"
+
+	endpointInvites = "/v2/invites"
 )
 
 type httpClient struct {
