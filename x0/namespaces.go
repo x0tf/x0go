@@ -62,7 +62,7 @@ func (client *NamespacesClient) Create(data *schema.CreateNamespaceData) (*schem
 }
 
 // Patch patches an existing namespace
-func (client *NamespacesClient) Patch(id string, data *schema.CreateNamespaceData) (*schema.Namespace, error) {
+func (client *NamespacesClient) Patch(id string, data *schema.PatchNamespaceData) (*schema.Namespace, error) {
 	response, err := client.http.execute("PATCH", fmt.Sprintf("%s/%s", endpointNamespaces, id), data)
 	if err != nil {
 		return nil, err

@@ -62,7 +62,7 @@ func (client *InvitesClient) Create(data *schema.CreateInviteData) (*schema.Invi
 }
 
 // Patch patches an existing invite
-func (client *InvitesClient) Patch(code string, data *schema.PatchElementData) (*schema.Invite, error) {
+func (client *InvitesClient) Patch(code string, data *schema.PatchInviteData) (*schema.Invite, error) {
 	response, err := client.http.execute("PATCH", fmt.Sprintf("%s/%s", endpointInvites, code), data)
 	if err != nil {
 		return nil, err
